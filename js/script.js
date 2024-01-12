@@ -1,4 +1,5 @@
-let enter = document.querySelector('.enter-button');
+let enterButton = document.querySelector('.enter-button');
+let enter = document.querySelector('.enter');
 let prison = document.querySelector('.prison');
 let sign = document.querySelector('.sign');
 let signTextTop = document.querySelector('.sign-text-top');
@@ -11,8 +12,8 @@ let choose = document.querySelector('.choose')
 let cross = document.querySelector('.cross')
 let popup = document.querySelector('.cross').parentElement
 
-enter.addEventListener('click', () => {
-    enter.remove();
+enterButton.addEventListener('click', () => {
+    enterButton.remove();
     choose.style.left = '0%'
     prison.style.left = '100%';
     sign.style.top = '-100%';
@@ -21,6 +22,9 @@ enter.addEventListener('click', () => {
     mexicanHat.style.top = '-60%';
     blackScreen.style.opacity = '.6';
     choose.style.zIndex = "100";
+    setTimeout(()=>{
+        enter.remove();
+    }, 2000)
     div.setAttribute("id", "map")
     flex.appendChild(div);
     let el = document.querySelector("#map")
@@ -530,34 +534,40 @@ enter.addEventListener('click', () => {
             [-22.121208620503005, -65.80252094220089],
             [-21.80420116930142, -66.23755733769285]
         ], { color: '#6CACE4' }).addTo(map);
+
         argentine.addEventListener('click', ()=>{
             document.querySelector('.popup-ar').classList.toggle('display-none')
-        })
-        // argentine.bindPopup("<p class='popup-text'>Voir les stats de l'<span class='land-text ar'>Argentine</span></p>")
-        // chili.bindPopup("<p class='popup-text'>Voir les stats du <span class='land-text cl'>Chili</span></p>");
-        // costarica.bindPopup("<p class='popup-text'>Voir les stats du <span class='land-text cr'>Costa Rica</span></p>");
-        // elsalvador.bindPopup("<p class='popup-text'>Voir les stats du <span class='land-text sv'>Salvador</span></p>");
-        // guatemala.bindPopup("<p class='popup-text'>Voir les stats du <span class='land-text gt'>Guatemala</span></p>");
-        // honduras.bindPopup("<p class='popup-text'>Voir les stats du <span class='land-text hn'>Honduras</span></p>");
-        // mexique.bindPopup("<p class='popup-text'>Voir les stats du <span class='land-text mx'>Mexique</span></p>");
-        // nicaragua.bindPopup("<p class='popup-text'>Voir les stats du <span class='land-text ni'>Nicaragua</span></p>");
-        // panama.bindPopup("<p class='popup-text'>Voir les stats du <span class='land-text pa'>Panama</span></p>");
-        // republique_dominicaine.bindPopup("<p class='popup-text'>Voir les stats de la <span class='land-text do'><br>République Dominicaine</span></p>");
-        // uruguay.bindPopup("<p class='popup-text'>Voir les stats de l'<span class='land-text uy'>Uruguay</span></p>");
-        // venezuela.bindPopup("<p class='popup-text'>Voir les stats du <span class='land-text ve'>Venzuela</span></p>");
-
-        document.querySelectorAll('.cross').forEach((cross) =>{
-            cross.addEventListener("click", function(){
-                cross.parentElement.classList.toggle('display-none')
-            })
         })
         document.querySelectorAll('.ar').forEach((ar) =>{
             ar.addEventListener("click", function(){
                 document.querySelector('.popup-ar').classList.toggle('display-none')
             })
         })
-       
 
+        chili.addEventListener('click', ()=>{
+            document.querySelector('.popup-cl').classList.toggle('display-none')
+        })
+        document.querySelectorAll('.cl').forEach((cl) =>{
+            cl.addEventListener("click", function(){
+                document.querySelector('.popup-cl').classList.toggle('display-none')
+            })
+        })
+
+        costarica.addEventListener('click', ()=>{
+            document.querySelector('.popup-cr').classList.toggle('display-none')
+        })
+        document.querySelectorAll('.cr').forEach((cr) =>{
+            cr.addEventListener("click", function(){
+                document.querySelector('.popup-cr').classList.toggle('display-none')
+            })
+        })
+        
+        
+        document.querySelectorAll('.cross').forEach((cross) =>{
+            cross.addEventListener("click", function(){
+                cross.parentElement.classList.toggle('display-none')
+            })
+        })
     //     // Exemple de données JSON
     // const data = [
     //     { label: 'Pays A', value: 50 },

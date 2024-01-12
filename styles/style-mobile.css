@@ -1,0 +1,49 @@
+.enter{
+    display: none;
+}
+
+.flex{
+    padding: 100px 0 100px 0;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.title{
+    position: relative;
+    font-size: 2em;
+}
+
+.land-list{
+    padding: 0;
+    height: 300px;
+    width: 70%;
+}
+
+.land{
+    padding: 5px 15px 5px 30px;
+}
+
+.land p{
+    font-size: 1em;
+}
+
+.flag{
+    width: 40px;
+}
+
+#map{
+    width: 250px;
+}
+
+.blackscreen{
+    height: 120%;
+}
+
+.popup-land{
+    height: 50%;
+    width: 85%;
+}
+
+.cross{
+    left: 80%;
+}
