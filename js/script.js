@@ -530,29 +530,33 @@ enter.addEventListener('click', () => {
             [-22.121208620503005, -65.80252094220089],
             [-21.80420116930142, -66.23755733769285]
         ], { color: '#6CACE4' }).addTo(map);
-        argentine.bindPopup("<p class='popup-text'>Voir les stats de l'<span class='land-text ar'>Argentine</span></p>");
-        chili.bindPopup("<p class='popup-text'>Voir les stats du <span class='land-text cl'>Chili</span></p>");
-        costarica.bindPopup("<p class='popup-text'>Voir les stats du <span class='land-text cr'>Costa Rica</span></p>");
-        elsalvador.bindPopup("<p class='popup-text'>Voir les stats du <span class='land-text sv'>Salvador</span></p>");
-        guatemala.bindPopup("<p class='popup-text'>Voir les stats du <span class='land-text gt'>Guatemala</span></p>");
-        honduras.bindPopup("<p class='popup-text'>Voir les stats du <span class='land-text hn'>Honduras</span></p>");
-        mexique.bindPopup("<p class='popup-text'>Voir les stats du <span class='land-text mx'>Mexique</span></p>");
-        nicaragua.bindPopup("<p class='popup-text'>Voir les stats du <span class='land-text ni'>Nicaragua</span></p>");
-        panama.bindPopup("<p class='popup-text'>Voir les stats du <span class='land-text pa'>Panama</span></p>");
-        republique_dominicaine.bindPopup("<p class='popup-text'>Voir les stats de la <span class='land-text do'><br>République Dominicaine</span></p>");
-        uruguay.bindPopup("<p class='popup-text'>Voir les stats de l'<span class='land-text uy'>Uruguay</span></p>");
-        venezuela.bindPopup("<p class='popup-text'>Voir les stats du <span class='land-text ve'>Venzuela</span></p>");
+        argentine.addEventListener('click', ()=>{
+            document.querySelector('.popup-ar').classList.toggle('display-none')
+        })
+        // argentine.bindPopup("<p class='popup-text'>Voir les stats de l'<span class='land-text ar'>Argentine</span></p>")
+        // chili.bindPopup("<p class='popup-text'>Voir les stats du <span class='land-text cl'>Chili</span></p>");
+        // costarica.bindPopup("<p class='popup-text'>Voir les stats du <span class='land-text cr'>Costa Rica</span></p>");
+        // elsalvador.bindPopup("<p class='popup-text'>Voir les stats du <span class='land-text sv'>Salvador</span></p>");
+        // guatemala.bindPopup("<p class='popup-text'>Voir les stats du <span class='land-text gt'>Guatemala</span></p>");
+        // honduras.bindPopup("<p class='popup-text'>Voir les stats du <span class='land-text hn'>Honduras</span></p>");
+        // mexique.bindPopup("<p class='popup-text'>Voir les stats du <span class='land-text mx'>Mexique</span></p>");
+        // nicaragua.bindPopup("<p class='popup-text'>Voir les stats du <span class='land-text ni'>Nicaragua</span></p>");
+        // panama.bindPopup("<p class='popup-text'>Voir les stats du <span class='land-text pa'>Panama</span></p>");
+        // republique_dominicaine.bindPopup("<p class='popup-text'>Voir les stats de la <span class='land-text do'><br>République Dominicaine</span></p>");
+        // uruguay.bindPopup("<p class='popup-text'>Voir les stats de l'<span class='land-text uy'>Uruguay</span></p>");
+        // venezuela.bindPopup("<p class='popup-text'>Voir les stats du <span class='land-text ve'>Venzuela</span></p>");
 
-        // document.querySelectorAll('.cross').forEach((cross), function(){
-        //     this.addEventListener("click", function(){
-        //         this.parentElement.classList.toggle('display-none')
-        //     })
-        // })
-        document.querySelectorAll('.ar').forEach((element), function(){
-            this.addEventListener("click", function(){
+        document.querySelectorAll('.cross').forEach((cross) =>{
+            cross.addEventListener("click", function(){
+                cross.parentElement.classList.toggle('display-none')
+            })
+        })
+        document.querySelectorAll('.ar').forEach((ar) =>{
+            ar.addEventListener("click", function(){
                 document.querySelector('.popup-ar').classList.toggle('display-none')
             })
         })
+       
 
     //     // Exemple de données JSON
     // const data = [
