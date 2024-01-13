@@ -3,17 +3,27 @@
 }
 
 .flex{
-    padding: 100px 0 100px 0;
+    padding: 20px 0 100px 0;
     flex-direction: column;
     gap: 50px;
+}
+
+.blackscreen{
+    height: calc(120vh + 20px);
 }
 
 .title{
     position: relative;
     font-size: 2em;
+    width: fit-content;
+    margin: 50px auto 0 auto;
+    top: 0;
+    left: 0;
+    text-align: center;
 }
 
 .land-list{
+    margin: 20px 0 0 0;
     padding: 0;
     height: 300px;
     width: 70%;
@@ -33,10 +43,6 @@
 
 #map{
     width: 250px;
-}
-
-.blackscreen{
-    height: 120%;
 }
 
 .popup-land{

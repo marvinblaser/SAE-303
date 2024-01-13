@@ -1,0 +1,29 @@
+.flex{
+    flex-direction: column;
+    gap: 30px;
+}
+
+.blackscreen{
+    height: 150vh;
+}
+
+.land-list{
+    padding: 0;
+    height: 300px;
+    width: 70%;
+}
+
+.title{
+    text-align: center;
+    position: relative;
+    font-size: 3em;
+    width: fit-content;
+    margin: 50px auto 60px auto;
+    top: 0;
+    left: 0;
+}
+
+#map{
+    width: 80%;
+    height: 50vh;
+}
