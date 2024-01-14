@@ -568,34 +568,54 @@ enterButton.addEventListener('click', () => {
                 cross.parentElement.classList.toggle('display-none')
             })
         })
-    //     // Exemple de données JSON
     // const data = [
-    //     { label: 'Pays A', value: 50 },
-    //     { label: 'Pays B', value: 80 },
-    //     { label: 'Pays C', value: 120 },
-    //     { label: 'Pays D', value: 45 },
-    //     // Ajoutez plus de données au besoin
-    //   ];
-  
-    //   // Dimensions du graphique
-    //   const width = 400;
-    //   const height = 300;
-  
-    //   // Crée l'élément SVG
-    //   const svg = document.getElementById('bar-chart');
-    //   svg.setAttribute('width', width);
-    //   svg.setAttribute('height', height);
-  
-    //   // Crée les barres du graphique
-    //   const barWidth = width / data.length;
-  
-    //   data.forEach((d, index) => {
-    //     const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-    //     rect.setAttribute('x', index * barWidth);
-    //     rect.setAttribute('y', height - d.value);
-    //     rect.setAttribute('width', barWidth - 1);
-    //     rect.setAttribute('height', d.value);
-    //     svg.appendChild(rect);
-    //   });
+    //     {"annee": 2000, "taux": 10.5},
+    //     {"annee": 2001, "taux": 11.0},
+    //     // ... ajouter les données pour chaque année jusqu'à 2020
+    // ];
+
+    // // Fonction pour créer un graphique en barres SVG
+    // function createBarChart(data) {
+    //     const svgWidth = 500, svgHeight = 300;
+    //     const barPadding = 5;
+    //     const barWidth = (svgWidth / data.length);
+    //     const tooltip = document.getElementById("tooltip");
+
+    //     // Créer un élément SVG
+    //     const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    //     svg.setAttribute("width", svgWidth);
+    //     svg.setAttribute("height", svgHeight);
+
+    //     // Créer des barres pour le graphique
+    //     data.forEach((item, index) => {
+    //         const bar = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+    //         const barHeight = item.taux * 10;
+
+    //         bar.setAttribute("y", svgHeight - barHeight);
+    //         bar.setAttribute("height", barHeight);
+    //         bar.setAttribute("width", barWidth - barPadding);
+    //         bar.setAttribute("transform", `translate(${[barWidth * index, 0]})`);
+    //         bar.setAttribute("fill", "blue");
+
+    //         // Ajouter l'événement de survol
+    //         bar.addEventListener("mouseover", function(event) {
+    //             tooltip.style.display = "block";
+    //             tooltip.textContent = `En ${item.annee}, le taux de criminalité était de ${item.taux}`;
+    //             tooltip.style.left = `${event.pageX}px`;
+    //             tooltip.style.top = `${event.pageY}px`;
+    //         });
+    //         bar.addEventListener("mouseout", function() {
+    //             tooltip.style.display = "none";
+    //         });
+
+    //         svg.appendChild(bar);
+    //     });
+
+    //     // Ajouter le SVG à l'élément DOM souhaité
+    //     document.getElementById("bar-chart").appendChild(svg);
+    // }
+
+    // // Appeler la fonction pour créer le graphique
+    // createBarChart(data);
     }
 })
