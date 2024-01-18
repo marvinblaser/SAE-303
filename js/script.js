@@ -570,8 +570,8 @@ enterButton.addEventListener('click', () => {
         })
         // Fonction pour créer un graphique en barres SVG
         function createBarChart(data) {
-            const svgWidth = 500, svgHeight = 300;
-            const barPadding = 5;
+            const svgWidth = 300, svgHeight = 300;
+            const barPadding = 10;
             const barWidth = (svgWidth / data.length);
             const tooltip = document.getElementById("tooltip");
 
@@ -583,7 +583,7 @@ enterButton.addEventListener('click', () => {
             // Créer des barres pour le graphique
             data.forEach((item, index) => {
                 const bar = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-                const barHeight = item.taux * 50; // Ajuster cette valeur selon l'échelle souhaitée
+                const barHeight = item.taux * 20; // Ajuster cette valeur selon l'échelle souhaitée
 
                 bar.setAttribute("y", svgHeight - barHeight);
                 bar.setAttribute("height", barHeight);

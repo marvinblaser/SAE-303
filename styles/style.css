@@ -272,16 +272,23 @@ body {
     cursor: pointer;
 }
 
- #bar-chat {
+#bar-chat {
     width: 400px;
     height: 300px;
     border: 1px solid #ccc;
-  }
+}
 
-  rect {
+rect {
     fill: steelblue;
-  }
+}
 
 .display-none{
     display: none;
+}
+
+.land-content{
+    position: relative;
+    left: 75%;
+    top: 15%;
+    transform: translateX(-50%);
 }
