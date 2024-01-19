@@ -727,7 +727,7 @@ enterButton.addEventListener("click", () => {
     popup.style.display = 'block';
     
     // Fetch the crime data from the JSON file and update the chart
-    fetch('crimeData.json')
+    fetch('js/data.json')
     .then(response => response.json())
     .then(data => {
         var countryData = data[country];
@@ -746,9 +746,6 @@ enterButton.addEventListener("click", () => {
       // Open the popup modal (this will depend on your specific implementation)
       var popup = document.getElementById("popup");
       popup.style.display = "block";
-
-      // Update the chart with the country's crime data
-      updateChart(country);
     }
 
     // Event listeners for each country button

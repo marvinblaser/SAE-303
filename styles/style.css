@@ -295,7 +295,8 @@ rect {
 }
 
 #popup {
-    z-index: 20;
+  position: absolute;
+    z-index: 1000;
 }
 
 button{
@@ -305,9 +306,11 @@ button{
 }
 
 #chartContainer{
-    z-index: 100;
+    position: relative;
+    z-index: 1001;
 }
 
 #closePopup{
-    z-index: 100;
+  position: relative;
+    z-index: 1002;
 }
