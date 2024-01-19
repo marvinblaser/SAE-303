@@ -9,9 +9,14 @@ let blackScreen = document.querySelector(".blackscreen");
 let div = document.createElement("div");
 let flex = document.querySelector(".flex");
 let choose = document.querySelector(".choose");
-let cross = document.querySelector(".cross");
-let popup = document.querySelector(".cross").parentElement;
+let land_list = document.querySelector(".land-list");
 
+
+// if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+//   // true for mobile device
+//   document.write("mobile device");
+// }
+// else{
 enterButton.addEventListener("click", () => {
   enterButton.remove();
   choose.style.left = "0%";
@@ -40,7 +45,7 @@ enterButton.addEventListener("click", () => {
     // L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
     //         attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
     //     }).addTo(map);
-    var mexique = L.polygon(
+    var Mexique = L.polygon(
       [
         [32.534355, -117.123803],
         [32.71926382410679, -114.71927706347788],
@@ -86,8 +91,9 @@ enterButton.addEventListener("click", () => {
       ],
       { color: "#006341" }
     ).addTo(map);
+    Mexique.className = "Mexique";
 
-    var guatemala = L.polygon(
+    var Guatemala = L.polygon(
       [
         [18.121982634166134, -87.8483261998348],
         [18.49035653255993, -88.53196515201857],
@@ -113,8 +119,9 @@ enterButton.addEventListener("click", () => {
       ],
       { color: "#4997D0" }
     ).addTo(map);
+    Guatemala.className = "Guatemala";
 
-    var elsalvador = L.polygon(
+    var El_Salvador = L.polygon(
       [
         [13.733662577333547, -90.13198180500352],
         [14.22224275654983, -89.55458409328743],
@@ -137,8 +144,9 @@ enterButton.addEventListener("click", () => {
       ],
       { color: "#0047AB" }
     ).addTo(map);
+    El_Salvador.className = "El_Salvador";
 
-    var honduras = L.polygon(
+    var Honduras = L.polygon(
       [
         [14.432591754371119, -89.36057844469475],
         [14.386389815186817, -89.10330148087745],
@@ -182,8 +190,9 @@ enterButton.addEventListener("click", () => {
       ],
       { color: "#00bce4" }
     ).addTo(map);
+    Honduras.className = "Honduras";
 
-    var nicaragua = L.polygon(
+    var Nicaragua = L.polygon(
       [
         [12.989878113173086, -87.3135025329113],
         [12.993662938951784, -87.05325754502128],
@@ -218,8 +227,9 @@ enterButton.addEventListener("click", () => {
       ],
       { color: "#0067c6" }
     ).addTo(map);
+    Nicaragua.className = "Nicaragua";
 
-    var costarica = L.polygon(
+    var Costa_Rica = L.polygon(
       [
         [11.05431457668452, -85.68956814945517],
         [11.220960896396026, -85.58504799308287],
@@ -255,8 +265,9 @@ enterButton.addEventListener("click", () => {
       ],
       { color: "#EF3340" }
     ).addTo(map);
+    Costa_Rica.className = "Costa_Rica";
 
-    var panama = L.polygon(
+    var Panama = L.polygon(
       [
         [9.560361797512897, -82.59141735952187],
         [9.483051668272017, -82.66980747680108],
@@ -314,8 +325,9 @@ enterButton.addEventListener("click", () => {
       ],
       { color: "#072357" }
     ).addTo(map);
+    Panama.className = "Panama";
 
-    var uruguay = L.polygon(
+    var Uruguay = L.polygon(
       [
         [-30.192418350278164, -57.639051057204576],
         [-33.118638425070614, -58.374696091726065],
@@ -333,8 +345,9 @@ enterButton.addEventListener("click", () => {
       ],
       { color: "#FFCD00" }
     ).addTo(map);
+    Uruguay.className = "Uruguay";
 
-    var republique_dominicaine = L.polygon(
+    var Republique_Dominicaine = L.polygon(
       [
         [19.746300336596214, -71.75600941824887],
         [18.067004120827637, -71.77200170160802],
@@ -348,8 +361,9 @@ enterButton.addEventListener("click", () => {
       ],
       { color: "#CE1126" }
     ).addTo(map);
+    Republique_Dominicaine.className = "Republique_Dominicaine";
 
-    var venezuela = L.polygon(
+    var Venezuela = L.polygon(
       [
         [11.869195927156062, -71.34540434572244],
         [9.202114948678714, -73.36313552435784],
@@ -422,8 +436,9 @@ enterButton.addEventListener("click", () => {
       ],
       { color: "#003DA5" }
     ).addTo(map);
+    Venezuela.className = "Venezuela";
 
-    var chili = L.polygon(
+    var Chili = L.polygon(
       [
         [-22.848544414398255, -67.17246713460153],
         [-22.980096264798984, -66.99668588584993],
@@ -479,8 +494,9 @@ enterButton.addEventListener("click", () => {
       ],
       { color: "#003DA5" }
     ).addTo(map);
+    Chili.className = "Chili";
 
-    var argentine = L.polygon(
+    var Argentine = L.polygon(
       [
         [-22.848544414398255, -67.17246713460153],
         [-22.980096264798984, -66.99668588584993],
@@ -570,201 +586,45 @@ enterButton.addEventListener("click", () => {
       ],
       { color: "#6CACE4" }
     ).addTo(map);
-
-    argentine.addEventListener("click", () => {
-      document.querySelector(".popup-ar").classList.toggle("display-none");
-    });
-    document.querySelectorAll(".ar").forEach((ar) => {
-      ar.addEventListener("click", function () {
-        document.querySelector(".popup-ar").classList.toggle("display-none");
-      });
-    });
-
-    chili.addEventListener("click", () => {
-      document.querySelector(".popup-cl").classList.toggle("display-none");
-    });
-    document.querySelectorAll(".cl").forEach((cl) => {
-      cl.addEventListener("click", function () {
-        document.querySelector(".popup-cl").classList.toggle("display-none");
-      });
-    });
-
-    costarica.addEventListener("click", () => {
-      document.querySelector(".popup-cr").classList.toggle("display-none");
-    });
-    document.querySelectorAll(".cr").forEach((cr) => {
-      cr.addEventListener("click", function () {
-        document.querySelector(".popup-cr").classList.toggle("display-none");
-      });
-    });
-
-    document.querySelectorAll(".cross").forEach((cross) => {
-      cross.addEventListener("click", function () {
-        cross.parentElement.classList.toggle("display-none");
-      });
-    });
-    // Fonction pour créer un graphique en barres SVG
-    // function createBarChart(data) {
-    //     const svgWidth = 300, svgHeight = 300;
-    //     const barPadding = 10;
-    //     const barWidth = (svgWidth / data.length);
-    //     const tooltip = document.getElementById("tooltip");
-
-    //     // Créer un élément SVG
-    //     const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    //     svg.setAttribute("width", svgWidth);
-    //     svg.setAttribute("height", svgHeight);
-
-    //     // Créer des barres pour le graphique
-    //     data.forEach((item, index) => {
-    //         const bar = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-    //         const barHeight = item.taux * 20; // Ajuster cette valeur selon l'échelle souhaitée
-
-    //         bar.setAttribute("y", svgHeight - barHeight);
-    //         bar.setAttribute("height", barHeight);
-    //         bar.setAttribute("width", barWidth - barPadding);
-    //         bar.setAttribute("transform", `translate(${[barWidth * index, 0]})`);
-    //         bar.setAttribute("fill", "blue");
-
-    //         // Ajouter l'événement de survol
-    //         bar.addEventListener("mouseover", function(event) {
-    //             tooltip.style.display = "block";
-    //             tooltip.textContent = `En ${item.annee}, le taux de criminalité était de ${item.taux}`;
-    //             tooltip.style.left = `${event.pageX}px`;
-    //             tooltip.style.top = `${event.pageY}px`;
-    //         });
-    //         bar.addEventListener("mouseout", function() {
-    //             tooltip.style.display = "none";
-    //         });
-
-    //         svg.appendChild(bar);
-    //     });
-
-    //     // Ajouter le SVG à l'élément DOM souhaité
-    //     document.getElementById("bar-chart").appendChild(svg);
-    // }
-
-    // // Fonction pour charger les données depuis un fichier JSON
-    // function loadData() {
-    //     const xhr = new XMLHttpRequest();
-    //     xhr.open('GET', 'js/data.json', true);
-    //     xhr.onload = function() {
-    //         if (this.status === 200) {
-    //             const crimeData = JSON.parse(this.responseText);
-    //             const countryDataAr = crimeData["Argentine"];
-    //             // const countryDataCl = crimeData["Chili"];
-    //             // const countryDataCr = crimeData["Costa Rica"];
-    //             createBarChart(countryDataAr);
-    //         }
-    //     };
-    //     xhr.send();
-    // }
-
-    // // Appel de la fonction pour charger les données
-    // loadData();
-
-    // Function to draw a line chart using SVG elements
-    function drawLineChart(countryData) {
-      var svgNS = "http://www.w3.org/2000/svg";
-      var chartWidth = 600;
-      var chartHeight = 400;
-      var padding = 50;
-
-      // Calculate scales
-      var xScale = (chartWidth - 2 * padding) / (countryData.length - 1);
-      var yMax = Math.max(...countryData.map((data) => data.taux));
-      var yScale = (chartHeight - 2 * padding) / yMax;
-
-      // Create SVG element
-      var svg = document.createElementNS(svgNS, "svg");
-      svg.setAttribute("width", chartWidth);
-      svg.setAttribute("height", chartHeight);
-      svg.setAttribute("viewBox", `0 0 ${chartWidth} ${chartHeight}`);
-      svg.setAttribute("style", "border: 1px solid #ccc");
-
-      // Draw lines
-      for (var i = 0; i < countryData.length - 1; i++) {
-        var line = document.createElementNS(svgNS, "line");
-        line.setAttribute("x1", padding + i * xScale);
-        line.setAttribute(
-          "y1",
-          chartHeight - padding - countryData[i].taux * yScale
-        );
-        line.setAttribute("x2", padding + (i + 1) * xScale);
-        line.setAttribute(
-          "y2",
-          chartHeight - padding - countryData[i + 1].taux * yScale
-        );
-        line.setAttribute("stroke", "black");
-        svg.appendChild(line);
-      }
-
-      // Draw axes
-      var xAxis = document.createElementNS(svgNS, "line");
-      xAxis.setAttribute("x1", padding);
-      xAxis.setAttribute("y1", chartHeight - padding);
-      xAxis.setAttribute("x2", chartWidth - padding);
-      xAxis.setAttribute("y2", chartHeight - padding);
-      xAxis.setAttribute("stroke", "black");
-      svg.appendChild(xAxis);
-
-      var yAxis = document.createElementNS(svgNS, "line");
-      yAxis.setAttribute("x1", padding);
-      yAxis.setAttribute("y1", padding);
-      yAxis.setAttribute("x2", padding);
-      yAxis.setAttribute("y2", chartHeight - padding);
-      yAxis.setAttribute("stroke", "black");
-      svg.appendChild(yAxis);
-
-      // Return the SVG element
-      return svg;
-    }
-
-    // Function to open the popup and update the chart
-    function openPopup(country) {
-    // Open the popup modal (this will depend on your specific implementation)
-    var popup = document.getElementById('popup');
-    popup.style.display = 'block';
-    
-    // Fetch the crime data from the JSON file and update the chart
-    fetch('js/data.json')
-    .then(response => response.json())
-    .then(data => {
-        var countryData = data[country];
-        if (countryData) {
-            var svgChart = drawLineChart(countryData);
-            var chartContainer = document.getElementById('chartContainer');
-            chartContainer.innerHTML = '';
-            chartContainer.appendChild(svgChart);
-        }
-    })
-    .catch(error => console.error('Error fetching crime data:', error));
-    }
-
-    // Function to open the popup and update the chart
-    function openPopup(country) {
-      // Open the popup modal (this will depend on your specific implementation)
-      var popup = document.getElementById("popup");
-      popup.style.display = "block";
-    }
-
-    // Event listeners for each country button
-    document.querySelectorAll("[data-country]").forEach(function (button) {
-      button.addEventListener("click", function () {
-        var country = this.getAttribute("data-country");
-        openPopup(country);
-      });
-    });
-
-    // Close the popup modal
-    document.getElementById("closePopup").addEventListener("click", function () {
-        document.getElementById("popup").style.display = "none";
-      });
-
-    // Assume crimeData is an object containing country names as keys and arrays of data as values
-    // This would be filled with the actual crime data in your implementation
-    var crimeData = {
-      
-    };
+    Argentine.className = "Argentine";
   }
+
+  let data;
+  fetch("./js/data.json")
+    .then((response) => response.json())
+    .then((json) => {
+      data = json;
+      for (let i = 0; i < Object.keys(data).length; i++) {
+        let div_land = document.createElement("div");
+        let img = document.createElement("img");
+        let p_land = document.createElement("p");
+        div_land.className = "land " + Object.keys(data)[i];
+        img.src = "img/flags/" + Object.keys(data)[i] + ".svg";
+        img.className = "flag";
+        p_land.innerText = (Object.keys(data)[i]).replace("_", ' ');
+        land_list.appendChild(div_land);
+        div_land.appendChild(img);
+        div_land.appendChild(p_land);
+
+        let div_popup = document.createElement("div");
+        let svg_cross = document.createElement("svg");
+        div_popup.className =
+          "popup-" + Object.keys(data)[i] + " popup-land display-none";
+        div_popup.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="cross" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`;
+        choose.appendChild(div_popup);
+        document
+          .querySelector("." + Object.keys(data)[i])
+          .addEventListener("click", () => {
+            document
+              .querySelector(".popup-" + Object.keys(data)[i])
+              .classList.toggle("display-none");
+          });
+        document.querySelectorAll(".cross").forEach((cross_s) => {
+          cross_s.addEventListener("click", function () {
+            cross_s.parentElement.classList.toggle("display-none");
+          });
+        });
+      }
+    })
 });
+// }

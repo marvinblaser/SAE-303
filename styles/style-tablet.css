@@ -27,3 +27,7 @@
     width: 80%;
     height: 50vh;
 }
+
+.cross{
+    left: calc(100% - 5vw);
+}
