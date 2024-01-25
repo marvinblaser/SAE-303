@@ -1,13 +1,3 @@
-.enter{
-    display: none;
-}
-
-.choose{
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
 .flex{
     padding: 20px 0 100px 0;
     flex-direction: column;
@@ -59,3 +49,8 @@
 .cross{
     left: calc(100% - 16vw);
 }
+
+.popup-land-title{
+    font-size: 2rem;
+    top: -12%;
+  }
