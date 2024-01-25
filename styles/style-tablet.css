@@ -31,3 +31,13 @@
 .cross{
     left: calc(100% - 5vw);
 }
+
+.enter{
+    display: none;
+}
+
+.choose{
+    position: absolute;
+    left: 0;
+    top: 0;
+}

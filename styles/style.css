@@ -28,7 +28,7 @@ body {
   position: absolute;
   z-index: 13;
   width: 900px;
-  top: -18%;
+  top: -27%;
   left: 50%;
   transform: translateX(-50%);
   transition: 2s linear;
@@ -40,9 +40,9 @@ body {
   backdrop-filter: blur(7.5px);
   -webkit-backdrop-filter: blur(3.5px);
   border-radius: 30px;
-  padding: 0px 50px;
+  padding: 0px 30px;
   position: absolute;
-  top: 45%;
+  bottom: 5%;
   left: 50%;
   transform: translate(-50%, 0);
   z-index: 13;
@@ -58,39 +58,32 @@ body {
 .enter-button-text {
   color: #ebf9ff;
   font-weight: 900;
-  font-size: 300px;
+  font-size: 15rem;
   cursor: pointer;
 }
 
-.hat {
+.sign-text-container{
   position: absolute;
-  z-index: 13;
-  top: 19%;
-  left: 60%;
-  width: 120px;
-  transform: rotate(25deg);
-  filter: drop-shadow(0px 2px 3px #000000);
+  top: 14%;
+  left: 34%;
   transition: 2s linear;
 }
 
 .sign-text-top {
-  position: absolute;
+  position: relative;
   z-index: 13;
   color: #ebf9ff;
   font-weight: 700;
-  font-size: 85px;
-  left: 37.2%;
-  top: 13%;
+  font-size: 4.7rem;
 }
 
 .sign-text-bottom {
-  position: absolute;
+  position: relative;
   z-index: 13;
   color: #ebf9ff;
   font-weight: 700;
-  font-size: 80px;
-  left: 37%;
-  top: 25%;
+  font-size: 4.5rem;
+  top: 1.7vw;
   transform: rotate(1deg);
 }
 
@@ -137,7 +130,7 @@ body {
   position: absolute;
   background-color: #000000;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   /* left: 50%; */
   /* top: 50%; */
   /* padding: 600px 1300px;  */
@@ -263,7 +256,7 @@ body {
 .cross {
   position: relative;
   top: 1.5%;
-  left: calc(100% - 3vw);
+  left: calc(100% - 4vw);
   opacity: 0.5;
   transition: 0.2s;
 }

@@ -2,15 +2,12 @@ let enterButton = document.querySelector(".enter-button");
 let enter = document.querySelector(".enter");
 let prison = document.querySelector(".prison");
 let sign = document.querySelector(".sign");
-let signTextTop = document.querySelector(".sign-text-top");
-let signTextBot = document.querySelector(".sign-text-bottom");
-let mexicanHat = document.querySelector(".hat");
+let signText = document.querySelector(".sign-text-container");
 let blackScreen = document.querySelector(".blackscreen");
 let div = document.createElement("div");
 let flex = document.querySelector(".flex");
 let choose = document.querySelector(".choose");
 let land_list = document.querySelector(".land-list");
-
 
 // if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
 //   // true for mobile device
@@ -22,9 +19,7 @@ enterButton.addEventListener("click", () => {
   choose.style.left = "0%";
   prison.style.left = "100%";
   sign.style.top = "-100%";
-  signTextTop.style.top = "-70%";
-  signTextBot.style.top = "-60%";
-  mexicanHat.style.top = "-60%";
+  signText.style.top = "-60%";
   blackScreen.style.opacity = ".6";
   choose.style.zIndex = "100";
   setTimeout(() => {
@@ -601,7 +596,7 @@ enterButton.addEventListener("click", () => {
         div_land.className = "land " + Object.keys(data)[i];
         img.src = "img/flags/" + Object.keys(data)[i] + ".svg";
         img.className = "flag";
-        p_land.innerText = (Object.keys(data)[i]).replace("_", ' ');
+        p_land.innerText = Object.keys(data)[i].replace("_", " ");
         land_list.appendChild(div_land);
         div_land.appendChild(img);
         div_land.appendChild(p_land);
@@ -612,110 +607,115 @@ enterButton.addEventListener("click", () => {
           "popup-" + Object.keys(data)[i] + " popup-land display-none";
         div_popup.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="cross" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`;
         choose.appendChild(div_popup);
-        document
-          .querySelector("." + Object.keys(data)[i])
-          .addEventListener("click", () => {
-            document
-              .querySelector(".popup-" + Object.keys(data)[i])
-              .classList.toggle("display-none");
-          });
-        document.querySelectorAll(".cross").forEach((cross_s) => {
-          cross_s.addEventListener("click", function () {
-            cross_s.parentElement.classList.toggle("display-none");
+        // document.querySelector("." + Object.keys(data)[i]).addEventListener("click", () => {
+        //   document.querySelector(".popup-" + Object.keys(data)[i]).classList.toggle("display-none");
+        // });
+        document.querySelectorAll("." + Object.keys(data)[i]).forEach(val => {
+          val.addEventListener("click", () => {
+            document.querySelector(".popup-" + Object.keys(data)[i]).classList.toggle("display-none");
           });
         });
+        
+
         // Exemple de données JSON pour l'Argentine
-// const dataArgentine = [
-//   { annee: 1995, taux: 7.8 },
-//   { annee: 2000, taux: 7.2 },
-//   { annee: 2010, taux: 5.5 },
-//   { annee: 2014, taux: 7.5 },
-//   { annee: 2015, taux: 6.5 },
-//   { annee: 2016, taux: 6 },
-//   { annee: 2017, taux: 5.1 }
-// ];
+        // const dataArgentine = [
+        //   { annee: 1995, taux: 7.8 },
+        //   { annee: 2000, taux: 7.2 },
+        //   { annee: 2010, taux: 5.5 },
+        //   { annee: 2014, taux: 7.5 },
+        //   { annee: 2015, taux: 6.5 },
+        //   { annee: 2016, taux: 6 },
+        //   { annee: 2017, taux: 5.1 }
+        // ];
 
-// // Configuration SVG
-// const svgWidth = 600, svgHeight = 400;
-// const margin = { top: 20, right: 20, bottom: 70, left: 60 };
-// const width = svgWidth - margin.left - margin.right;
-// const height = svgHeight - margin.top - margin.bottom;
+        // // Configuration SVG
+        // const svgWidth = 600, svgHeight = 400;
+        // const margin = { top: 20, right: 20, bottom: 70, left: 60 };
+        // const width = svgWidth - margin.left - margin.right;
+        // const height = svgHeight - margin.top - margin.bottom;
 
-// // Création de l'élément SVG
-// const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-// svg.setAttribute('width', svgWidth);
-// svg.setAttribute('height', svgHeight);
-// document.body.appendChild(svg);
+        // // Création de l'élément SVG
+        // const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        // svg.setAttribute('width', svgWidth);
+        // svg.setAttribute('height', svgHeight);
+        // document.body.appendChild(svg);
 
-// // Calcul des échelles
-// const xScale = (dataArgentine, width) => {
-//   const uniqueYears = dataArgentine.map(d => d.annee);
-//   const padding = 0.1;
-//   const bandWidth = width / uniqueYears.length - padding;
-//   return (year) => {
-//     return uniqueYears.indexOf(year) * (bandWidth + padding);
-//   };
-// };
+        // // Calcul des échelles
+        // const xScale = (dataArgentine, width) => {
+        //   const uniqueYears = dataArgentine.map(d => d.annee);
+        //   const padding = 0.1;
+        //   const bandWidth = width / uniqueYears.length - padding;
+        //   return (year) => {
+        //     return uniqueYears.indexOf(year) * (bandWidth + padding);
+        //   };
+        // };
 
-// const yScale = (dataArgentine, height) => {
-//   const maxRate = Math.max(...dataArgentine.map(d => d.taux));
-//   return (rate) => {
-//     return height - (rate / maxRate) * height;
-//   };
-// };
+        // const yScale = (dataArgentine, height) => {
+        //   const maxRate = Math.max(...dataArgentine.map(d => d.taux));
+        //   return (rate) => {
+        //     return height - (rate / maxRate) * height;
+        //   };
+        // };
 
-// const xAxis = (svg, scale, height) => {
-//   const axis = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-//   axis.setAttribute('transform', `translate(0,${height})`);
-//   dataArgentine.forEach(d => {
-//     const tick = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-//     tick.setAttribute('text-anchor', 'middle');
-//     tick.setAttribute('x', scale(d.annee));
-//     tick.setAttribute('y', 20);
-//     tick.textContent = d.annee;
-//     axis.appendChild(tick);
-//   });
-//   svg.appendChild(axis);
-// };
+        // const xAxis = (svg, scale, height) => {
+        //   const axis = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+        //   axis.setAttribute('transform', `translate(0,${height})`);
+        //   dataArgentine.forEach(d => {
+        //     const tick = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        //     tick.setAttribute('text-anchor', 'middle');
+        //     tick.setAttribute('x', scale(d.annee));
+        //     tick.setAttribute('y', 20);
+        //     tick.textContent = d.annee;
+        //     axis.appendChild(tick);
+        //   });
+        //   svg.appendChild(axis);
+        // };
 
-// const yAxis = (svg, scale) => {
-//   const axis = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-//   const ticks = scale.ticks ? scale.ticks(10) : scale.domain();
-//   ticks.forEach(tickValue => {
-//     const tick = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-//     tick.setAttribute('text-anchor', 'end');
-//     tick.setAttribute('x', -6);
-//     tick.setAttribute('y', scale(tickValue) + 6);
-//     tick.textContent = tickValue;
-//     axis.appendChild(tick);
-//   });
-//   svg.appendChild(axis);
-// };
+        // const yAxis = (svg, scale) => {
+        //   const axis = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+        //   const ticks = scale.ticks ? scale.ticks(10) : scale.domain();
+        //   ticks.forEach(tickValue => {
+        //     const tick = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        //     tick.setAttribute('text-anchor', 'end');
+        //     tick.setAttribute('x', -6);
+        //     tick.setAttribute('y', scale(tickValue) + 6);
+        //     tick.textContent = tickValue;
+        //     axis.appendChild(tick);
+        //   });
+        //   svg.appendChild(axis);
+        // };
 
-// const x = xScale(dataArgentine, width);
-// const y = yScale(dataArgentine, height);
+        // const x = xScale(dataArgentine, width);
+        // const y = yScale(dataArgentine, height);
 
-// // Dessiner les barres
-// dataArgentine.forEach(d => {
-//   const bar = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-//   bar.setAttribute('x', x(d.annee));
-//   bar.setAttribute('y', y(d.taux));
-//   bar.setAttribute('width', width / dataArgentine.length - 1);
-//   bar.setAttribute('height', height - y(d.taux));
-//   bar.setAttribute('fill', 'steelblue');
-//   svg.appendChild(bar);
-// });
+        // // Dessiner les barres
+        // dataArgentine.forEach(d => {
+        //   const bar = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        //   bar.setAttribute('x', x(d.annee));
+        //   bar.setAttribute('y', y(d.taux));
+        //   bar.setAttribute('width', width / dataArgentine.length - 1);
+        //   bar.setAttribute('height', height - y(d.taux));
+        //   bar.setAttribute('fill', 'steelblue');
+        //   svg.appendChild(bar);
+        // });
 
-// // Ajout des axes
-// xAxis(svg, x, height);
-// yAxis(svg, y);
+        // // Ajout des axes
+        // xAxis(svg, x, height);
+        // yAxis(svg, y);
 
-// // Déplacer le graphique pour laisser de la place pour les axes
-// const chart = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-// chart.setAttribute('transform', `translate(${margin.left},${margin.top})`);
-// svg.appendChild(chart);
-
+        // // Déplacer le graphique pour laisser de la place pour les axes
+        // const chart = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+        // chart.setAttribute('transform', `translate(${margin.left},${margin.top})`);
+        // svg.appendChild(chart);
       }
-    })
+      document.querySelectorAll(".cross").forEach((cross_s) => {
+        cross_s.addEventListener("click", function () {
+          cross_s.parentElement.classList.toggle("display-none");
+        });
+      });
+      Object.entries(data).forEach(([key, value]) => {
+        console.log( value[0]['annee'] );
+      });
+    });
 });
 // }
