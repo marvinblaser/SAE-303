@@ -240,12 +240,8 @@ body {
   cursor: pointer;
 }
 .popup-land {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   z-index: 120;
-  position: absolute;
+  position: fixed;
   height: 80%;
   width: 60%;
   left: 50%;
@@ -322,5 +318,8 @@ button{
 }
 
 .lol{
-  position: relative;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
