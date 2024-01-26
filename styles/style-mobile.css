@@ -54,3 +54,9 @@
     font-size: 2rem;
     top: -12%;
   }
+
+.lol{
+    top: -20%;
+    left: -30%;
+    transform: scale(.5);
+}
