@@ -702,9 +702,6 @@ fetch("./js/data.json")
       // Exemple d'appel de la fonction pour un pays donné
       createChartForCountry(`${Object.keys(data)[i]}`);
       
-      
-      
-      
       choose.appendChild(div_popup);
       document
         .querySelector("." + Object.keys(data)[i])
@@ -719,96 +716,6 @@ fetch("./js/data.json")
           .classList.toggle("display-none");
       });
       console.log(Object.keys(data)[i])
-      // Exemple de données JSON pour l'Argentine
-      // const dataArgentine = [
-      //   { annee: 1995, taux: 7.8 },
-      //   { annee: 2000, taux: 7.2 },
-      //   { annee: 2010, taux: 5.5 },
-      //   { annee: 2014, taux: 7.5 },
-      //   { annee: 2015, taux: 6.5 },
-      //   { annee: 2016, taux: 6 },
-      //   { annee: 2017, taux: 5.1 }
-      // ];
-
-      // // Configuration SVG
-      // const svgWidth = 600, svgHeight = 400;
-      // const margin = { top: 20, right: 20, bottom: 70, left: 60 };
-      // const width = svgWidth - margin.left - margin.right;
-      // const height = svgHeight - margin.top - margin.bottom;
-
-      // // Création de l'élément SVG
-      // const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-      // svg.setAttribute('width', svgWidth);
-      // svg.setAttribute('height', svgHeight);
-      // document.body.appendChild(svg);
-
-      // // Calcul des échelles
-      // const xScale = (dataArgentine, width) => {
-      //   const uniqueYears = dataArgentine.map(d => d.annee);
-      //   const padding = 0.1;
-      //   const bandWidth = width / uniqueYears.length - padding;
-      //   return (year) => {
-      //     return uniqueYears.indexOf(year) * (bandWidth + padding);
-      //   };
-      // };
-
-      // const yScale = (dataArgentine, height) => {
-      //   const maxRate = Math.max(...dataArgentine.map(d => d.taux));
-      //   return (rate) => {
-      //     return height - (rate / maxRate) * height;
-      //   };
-      // };
-
-      // const xAxis = (svg, scale, height) => {
-      //   const axis = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-      //   axis.setAttribute('transform', `translate(0,${height})`);
-      //   dataArgentine.forEach(d => {
-      //     const tick = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-      //     tick.setAttribute('text-anchor', 'middle');
-      //     tick.setAttribute('x', scale(d.annee));
-      //     tick.setAttribute('y', 20);
-      //     tick.textContent = d.annee;
-      //     axis.appendChild(tick);
-      //   });
-      //   svg.appendChild(axis);
-      // };
-
-      // const yAxis = (svg, scale) => {
-      //   const axis = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-      //   const ticks = scale.ticks ? scale.ticks(10) : scale.domain();
-      //   ticks.forEach(tickValue => {
-      //     const tick = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-      //     tick.setAttribute('text-anchor', 'end');
-      //     tick.setAttribute('x', -6);
-      //     tick.setAttribute('y', scale(tickValue) + 6);
-      //     tick.textContent = tickValue;
-      //     axis.appendChild(tick);
-      //   });
-      //   svg.appendChild(axis);
-      // };
-
-      // const x = xScale(dataArgentine, width);
-      // const y = yScale(dataArgentine, height);
-
-      // // Dessiner les barres
-      // dataArgentine.forEach(d => {
-      //   const bar = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-      //   bar.setAttribute('x', x(d.annee));
-      //   bar.setAttribute('y', y(d.taux));
-      //   bar.setAttribute('width', width / dataArgentine.length - 1);
-      //   bar.setAttribute('height', height - y(d.taux));
-      //   bar.setAttribute('fill', 'steelblue');
-      //   svg.appendChild(bar);
-      // });
-
-      // // Ajout des axes
-      // xAxis(svg, x, height);
-      // yAxis(svg, y);
-
-      // // Déplacer le graphique pour laisser de la place pour les axes
-      // const chart = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-      // chart.setAttribute('transform', `translate(${margin.left},${margin.top})`);
-      // svg.appendChild(chart);
     }
     document.querySelectorAll(".cross").forEach((cross_s) => {
       cross_s.addEventListener("click", function () {
