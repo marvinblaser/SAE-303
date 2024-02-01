@@ -2,7 +2,6 @@ let enterButton = document.querySelector(".enter-button");
 let enter = document.querySelector(".enter");
 let prison = document.querySelector(".prison");
 let sign = document.querySelector(".sign");
-let signText = document.querySelector(".sign-text-container");
 let blackScreen = document.querySelector(".blackscreen");
 let div = document.createElement("div");
 let flex = document.querySelector(".flex");
@@ -15,7 +14,6 @@ enterButton.addEventListener("click", () => {
   choose.style.left = "0%";
   prison.style.left = "100%";
   sign.style.top = "-100%";
-  signText.style.top = "-60%";
   blackScreen.style.opacity = ".6";
   choose.style.zIndex = "100";
   setTimeout(() => {
@@ -615,6 +613,7 @@ fetch("./js/data.json")
       land_list.appendChild(div_land);
       div_land.appendChild(img);
       div_land.appendChild(p_land);
+      let popup_line = document.createElement("div");
 
       let div_popup = document.createElement("div");
       let svg_cross = document.createElement("svg");
@@ -686,7 +685,7 @@ fetch("./js/data.json")
           bar.setAttribute('class', 'bar');
           svg.appendChild(bar);
           bar.addEventListener('click', () => {
-            alert(`En ${d.annee}, le taux de criminalité était de ${d.taux}`);
+            popup_line.innerText = `En ${d.annee}, le taux de criminalité était de ${d.taux}`;
           });
         });
       
@@ -698,6 +697,9 @@ fetch("./js/data.json")
         chart.setAttribute('transform', `translate(${margin.left},${margin.top})`);
         svg.appendChild(chart);
       }
+
+      div_popup.appendChild(popup_line);
+      popup_line.className = 'popup-line'
       
       // Exemple d'appel de la fonction pour un pays donné
       createChartForCountry(`${Object.keys(data)[i]}`);
@@ -722,5 +724,5 @@ fetch("./js/data.json")
         cross_s.parentElement.classList.toggle("display-none");
       });
     });
+  
   });
-// }

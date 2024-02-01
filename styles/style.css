@@ -27,7 +27,7 @@ body {
 .sign {
   position: absolute;
   z-index: 13;
-  width: 900px;
+  width: 40vw;
   top: -27%;
   left: 50%;
   transform: translateX(-50%);
@@ -60,35 +60,6 @@ body {
   font-weight: 900;
   font-size: 15rem;
   cursor: pointer;
-}
-
-.sign-text-container{
-  position: absolute;
-  top: 14%;
-  left: 34%;
-  transition: 2s linear;
-}
-
-.sign-text-top {
-  position: relative;
-  z-index: 13;
-  color: #ebf9ff;
-  font-weight: 700;
-  font-size: 4.7rem;
-}
-
-.sign-text-bottom {
-  position: relative;
-  z-index: 13;
-  color: #ebf9ff;
-  font-weight: 700;
-  font-size: 4.5rem;
-  top: 1.7vw;
-  transform: rotate(1deg);
-}
-
-.sign-text {
-  transition: 2s linear;
 }
 
 .tumbleweed {
@@ -322,4 +293,12 @@ button{
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+.popup-line{
+  font-size: 1em;
+  position: relative;
+  top: 60%;
+  left: 50%;
+  transform: translate(-20%, 0);
 }

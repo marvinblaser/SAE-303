@@ -53,3 +53,8 @@
     transform: translate(0, -30%);
     transform: scale(.7);
 }
+
+.popup-line{
+    font-size: .7em;
+    transform: translate(-30%, 0);
+}
